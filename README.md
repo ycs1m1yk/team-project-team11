@@ -67,6 +67,7 @@ layout = QtWidgets.QVBoxLayout()
 ```python
 from nsfw_detector import NSFWDetector
 detector = NSFWDetector('./nsfw.299x299.h5')
+```
 
 ##Demo
 - https://www.youtube.com/watch?v=_IUhD4zoYuI
