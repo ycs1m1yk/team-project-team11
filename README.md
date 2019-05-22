@@ -14,7 +14,9 @@ NSFW pre-trained model :  https://github.com/GantMan/nsfw_model
 얼굴 모자이크
 ----
 
-설명 솰라솰라
+기계학습에 사용한 알고리즘은 신경망 알고리즘들 중에서 Convolutional Neural Network(CNN)을 사용하였습니다. 한국어에서 형태소분석은 자연어처리를 위한 가장 기본적인 전처리 과정이므로 속도가 매우 중요한 요소라고 생각합니다. 따라서 자연어처리에 많이 사용하는 Long-Short Term Memory(LSTM)와 같은 Recurrent Neural Network(RNN) 알고리즘은 속도 면에서 활용도가 떨어질 것으로 예상하여 고려 대상에서 제외하였습니다.
+
+CNN 모델에 대한 상세한 내용은 [CNN 모델](https://github.com/kakao/khaiii/wiki/CNN-%EB%AA%A8%EB%8D%B8) 문서를 참고하시기 바랍니다.
 
 NSFW
 ----
@@ -27,11 +29,6 @@ Trained on 60+ Gigs of data to identify:
 - `sexy` - sexually explicit images, not pornography
 
 This model powers [NSFW JS](https://github.com/infinitered/nsfwjs) - [More Info](https://shift.infinite.red/avoid-nightmares-nsfw-js-ab7b176978b1)
-
-### 속도
-모델의 크기가 커지면 정확도가 높아지긴 하지만 그만큼 계산량 또한 많아져 속도가 떨어집니다. 그래서 적당한 정확도를 갖는 모델 중에서 크기가 작아 속도가 빠른 모델을 base 모델로 선정하였습니다. F-Score 값이 95 이상이면서 모델의 크기가 작은 모델은 win=3, emb=30이며 F-Score는 95.30입니다.
-
-속도를 비교하기 위해 1만 문장(총 903KB, 문장 평균 91)의 텍스트를 분석해 비교했습니다. base 모델의 경우 약 10.5초, large 모델의 경우 약 78.8초가 걸립니다.
 
 빌드 및 설치
 ----
@@ -64,14 +61,8 @@ layout = QtWidgets.QVBoxLayout()
 * NSFW button 은 이미지를 받아와서 NSFW 필터링을
 
 ## Usage
-```python
-from nsfw_detector import NSFWDetector
-detector = NSFWDetector('./nsfw.299x299.h5')
+```python face_recog&mosaic.py
+```
 
-##Demo
+## Demo
 - https://www.youtube.com/watch?v=_IUhD4zoYuI
-
-
-Contributing
-----
-Besaic에 기여하실 분들은
