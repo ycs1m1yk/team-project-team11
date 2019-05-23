@@ -61,7 +61,13 @@ layout = QtWidgets.QVBoxLayout()
 * NSFW button 은 이미지를 받아와서 NSFW 필터링을
 
 ## Usage
+<<<<<<< HEAD
 ```python face_recog&mosaic.py
+=======
+```python
+from nsfw_detector import NSFWDetector
+detector = NSFWDetector('./nsfw.299x299.h5')
+>>>>>>> master
 ```
 
 ## Demo
